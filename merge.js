@@ -16,7 +16,7 @@ function putvector(ruleList)
 	var maxSpace = 30;
 	for ( var ruleCnt = 0; ruleCnt < ruleList.length; ruleCnt++ ) {
 		if ( ruleCnt % maxSpace == 0 ) spaceCnt++;
-		for ( var idxCnt = 0; idxCnt < 20; idxCnt++ ) {//65536
+		for ( var idxCnt = 0; idxCnt < 100; idxCnt++ ) {//65536
 			vector[idxCnt] = vector[idxCnt] || [];
 			if ( ruleCnt % maxSpace != 0 ) {
 				if ( ( idxCnt >= ruleList[ruleCnt]['min'] ) && ( idxCnt <= ruleList[ruleCnt]['max'] ) )
@@ -47,9 +47,9 @@ Object.keys(port).forEach(function(data,datacount){
 	console.log(`portunique 47:[${portunique}]`);
 	//console.log(portunique.length);
 
-	for(var i=0; i<portunique.length; i+1) 
-	{		console.log(`${i}`);
-	        for(var j=i+1; j<portunique.length; j+1) 
+	for(var i=0; i<portunique.length; i++) 
+	{		console.log(`i=${i}`);
+	        for(var j=i+1; j<portunique.length; j++) 
 	        {	
 				//console.log(`portunique[${i}]:${portunique[i]} , portunique[${j}]:${portunique[j]}`);			
 				//if(portunique[i][0] === portunique[j][0])
@@ -60,12 +60,10 @@ Object.keys(port).forEach(function(data,datacount){
 					portunique.splice(j, 1);
 					console.log(`portunique ${j} : [${portunique}],`);
 	            }
-	            if(portunique[i]!=portunique[j])
 				break;
 			}
 			console.log(`123`);
-			i++;
-			return;
+		
 	}
 	 
 })
